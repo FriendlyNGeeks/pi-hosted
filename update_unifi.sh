@@ -20,7 +20,7 @@ while true; do
     read -p "Have you created AND downloaded a local backup of controller already? " yn
     case $yn in
         [Yy]* ) check_internet; break;;
-        [Nn]* ) exit;;
+        [Nn]* ) echo "Please create backup AND download to a different host before continuing."; exit;;
         * ) echo "Please answer yes[Y/y] or no[N/n].";;
     esac
 done
