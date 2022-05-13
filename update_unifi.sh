@@ -15,7 +15,17 @@ function check_internet() {
   fi
 }
 
-check_internet
+function check_for_local_backup() {
+while true; do
+    read -p "Have you created AND downloaded a local backup of controller already? " yn
+    case $yn in
+        [Yy]* ) check_internet; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes[Y/y] or no[N/n].";;
+    esac
+done
+}
+
 
 unifi_pid=`docker ps | grep unifi-rpi | awk '{print $1}'`
 unifi_name=`docker ps | grep unifi-rpi | awk '{print $2}'`
