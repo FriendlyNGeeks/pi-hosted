@@ -26,6 +26,7 @@ while true; do
 done
 }
 
+check_for_local_backup
 
 unifi_pid=`docker ps | grep unifi-rpi | awk '{print $1}'`
 unifi_name=`docker ps | grep unifi-rpi | awk '{print $2}'`
