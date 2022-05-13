@@ -23,4 +23,4 @@ unifi_name=`docker ps | grep unifi-rpi | awk '{print $2}'`
 sudo docker stop $unifi_pid || error "Failed to stop unifi!"
 sudo docker rm $unifi_pid || error "Failed to remove unifi container!"
 sudo docker rmi $unifi_name || error "Failed to remove/untag images from the container!"
-sudo docker run -d -p 8080:8443 --name=unifi --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v config:/var/lib/unifi -v log:/usr/lib/unifi/logs -v log2:/var/log/unifi -v run:/usr/lib/unifi/run -v run2:/run/unifi -v work:/usr/lib/unifi/work ryansch/unifi-rpi:latest || error "Failed to execute newer version of Portainer!"
+sudo docker run -d --network host --name=unifi --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v config:/var/lib/unifi -v log:/usr/lib/unifi/logs -v log2:/var/log/unifi -v run:/usr/lib/unifi/run -v run2:/run/unifi -v work:/usr/lib/unifi/work ryansch/unifi-rpi:latest || error "Failed to execute newer version of Portainer!"
