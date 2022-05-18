@@ -9,9 +9,9 @@ function prompt_fields() {
 
     while true; do
         echo -n "Enter a name for the dl ZIM file (mywikie.zim):"
-        read zimName
-        if [ ! -z "$zimName" ] ;then # this grammar (the #[] operator) means that the variable $answer where any Y or y in 1st position will be dropped if they exist.
-            echo "Filename set to: $zimNAME";
+        read zimNAME
+        if [[! -z "$zimNAME" ]] ;then # this grammar (the #[] operator) means that the variable $answer where any Y or y in 1st position will be dropped if they exist.
+            echo "Filename set to: $zimNAME"; break;;
         else
             echo "Please enter a valid file name!"
         fi
@@ -20,10 +20,10 @@ function prompt_fields() {
     while true; do
         echo -n "Enter the URL for the dl ZIM file (https://zim-r-us/mywikie.zim):"
         read zimURL
-        if [ ! -z "$zimURL" ] ;then # this grammar (the #[] operator) means that the variable $answer where any Y or y in 1st position will be dropped if they exist.
+        if [[ ! -z "$zimURL" ]] ;then # this grammar (the #[] operator) means that the variable $answer where any Y or y in 1st position will be dropped if they exist.
             wget -q --spider $zimURL
             if [ $? -eq 0 ]; then
-                echo "URL set to: $zimURL";
+                echo "URL set to: $zimURL"; break;;
             else
                 echo "No ZIM file found at: $zimURL"
             fi
@@ -32,7 +32,7 @@ function prompt_fields() {
         fi
     done
 
-    sudo wget -O /tmp/zim/$zimName $zimURL || error "Failed to download file!";
+    sudo wget -O /tmp/zim/$zimNAME $zimURL || error "Failed to download file!";
     while true; do
         read -p "Would you like to download another ZIM to use in KIWIX? " yn
         case $yn in
