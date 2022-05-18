@@ -53,14 +53,6 @@ function check_internet() {
   fi
 }
 
-check_internet
-
-echo "Setting permissions..."
-sudo chown -R 472:472 /portainer/Files/AppData/Config/grafana/data || error "Failed to set permissions for Grafana data!"
-echo "Done You are ready to goto next step in the install document"
-
-
-
 function prompt_ini_action() {
     while true; do
         read -p "Would you like to download a ZIM to use in KIWIX? " yn
