@@ -26,6 +26,7 @@ function prompt_fields() {
                 echo "URL set to: $zimURL";
             else
                 echo "No ZIM file found at: $zimURL"
+            fi
         else
             echo "Please enter a valid url!"
         fi
