@@ -10,7 +10,7 @@ function prompt_fields() {
     while true; do
         echo -n "Enter a name for the dl ZIM file (mywikie.zim):"
         read zimName
-        if [ "$zimName" != "" || "$zimName" != " " || "$zimName" != undefine ] ;then # this grammar (the #[] operator) means that the variable $answer where any Y or y in 1st position will be dropped if they exist.
+        if [ ! -z "$zimName" ] ;then # this grammar (the #[] operator) means that the variable $answer where any Y or y in 1st position will be dropped if they exist.
             echo "Filename set to: $zimNAME";
         else
             echo "Please enter a valid file name!"
@@ -20,7 +20,7 @@ function prompt_fields() {
     while true; do
         echo -n "Enter the URL for the dl ZIM file (https://zim-r-us/mywikie.zim):"
         read zimURL
-        if [ "$zimURL" != "" || "$zimURL" != " " || "$zimURL" != undefine ] ;then # this grammar (the #[] operator) means that the variable $answer where any Y or y in 1st position will be dropped if they exist.
+        if [ ! -z "$zimURL" ] ;then # this grammar (the #[] operator) means that the variable $answer where any Y or y in 1st position will be dropped if they exist.
             wget -q --spider $zimURL
             if [ $? -eq 0 ]; then
                 echo "URL set to: $zimURL";
