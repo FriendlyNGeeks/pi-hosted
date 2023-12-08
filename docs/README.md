@@ -5,7 +5,7 @@
 This repository is a collection of tutorials for hosting a variety of server applications using [Docker](https://www.docker.com/) and [Portainer](https://github.com/portainer/portainer).
 
 ### App Template for Portainer
-![App Template Image](https://github.com/pi-hosted/pi-hosted/blob/master/apptemplate.png?raw=true) 
+![App Template Image](https://github.com/pi-hosted/pi-hosted/blob/master/apptemplate.png?raw=true)
 
 ### Apps List
 
