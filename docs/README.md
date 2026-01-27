@@ -42,7 +42,7 @@ sudo reboot
 After a reboot, run `install-portainer.sh`, to install Portainer.io
 
 ```
-wget -qO- https://raw.githubusercontent.com/FriendlyNGeeks/pi-hosted/refs/heads/master/install_portainer.sh | bash
+wget -qO- https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/install_portainer.sh | bash
 # to update portainer, run this command instead
 wget -qO- https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/update_portainer.sh | bash
 ```
