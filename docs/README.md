@@ -15,7 +15,7 @@ See the list of apps included in this template [here](https://github.com/pi-host
 Run `install-docker.sh`, to install docker, and add the current user to the docker usergroup.
 
 ```
-wget -qO- https://raw.githubusercontent.com/FriendlyNGeeks/pi-hosted/refs/heads/master/install_docker.sh | bash
+wget -qO- https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/install_docker.sh | bash
 ```
 You need to reboot/logout for changes to take effect
 
@@ -42,9 +42,9 @@ sudo reboot
 After a reboot, run `install-portainer.sh`, to install Portainer.io
 
 ```
-wget -qO- https://raw.githubusercontent.com/FriendlyNGeeks/pi-hosted/refs/heads/master/install_portainer.sh | bash
+wget -qO- https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/install_portainer.sh | bash
 # to update portainer, run this command instead
-wget -qO- https://raw.githubusercontent.com/FriendlyNGeeks/pi-hosted/refs/heads/master/update_portainer.sh | bash
+wget -qO- https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/update_portainer.sh | bash
 ```
 
 ### Login to Portainer to update the App Template.
