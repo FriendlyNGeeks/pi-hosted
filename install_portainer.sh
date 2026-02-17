@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SUDO="sudo"
+export SUDO="sudo"
 
 function error {
   echo -e "\\e[91m$1\\e[39m"
