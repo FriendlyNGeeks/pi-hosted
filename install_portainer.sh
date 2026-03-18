@@ -22,6 +22,7 @@ function check_internet() {
   wget -q --spider http://github.com
   if [ $? -eq 0 ]; then
     echo "Online. Continuing."
+    check_distro
   else
     error "Offline. Go connect to the internet then run the script again."
   fi
