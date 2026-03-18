@@ -9,10 +9,10 @@ function error {
 
 # Detect Alpine Linux (no sudo by default)
 function check_distro() {
-  if [ -f /etc/alpine-release ]; then
-    SUDO=""
-  else
+  if command -v sudo >/dev/null 2>&1; then
     SUDO="sudo"
+  else
+    SUDO=""
   fi
 }
 
